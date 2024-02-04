@@ -4,8 +4,10 @@ body {
 }
 
 h1 {
-  color: white;
-  background-color: rgb(235, 58, 9) ;
+  position: absolute;
+ margin: 30px;
+  color: rgb(237, 12, 12);
+  z-index: 1;
 }
 
 #bg_image {
@@ -16,6 +18,13 @@ h1 {
   z-index: -1;
 }
 
+#logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+}
+
 .top_boxes {
   display: flex;
 }
@@ -23,8 +32,8 @@ h1 {
 .rounded_box {
   width: 120px;
   height: 120px;
-  margin: 80px 50px 50px 20px;
-  background-color: #f2e208;
+  margin: 100px 60px 60px 20px;
+  background-color: #f2e208d7;
   border-radius: 10px;
   font-weight: 800;
   color: rgb(20, 121, 244);
@@ -32,12 +41,28 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease;
 }
 
 .rounded_box:hover {
  background-color: rgb(235, 58, 9);
+ animation: scaleAnimation 1s infinite alternate;
 }
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
 
 .drop_zone {
   width: 300px;
