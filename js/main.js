@@ -4,20 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   boxes.forEach(box => {
     box.addEventListener('dragstart', dragStart);
-    box.addEventListener('dragend', dragEnd);
   });
 
   dropZone.addEventListener('dragover', dragOver);
   dropZone.addEventListener('drop', drop);
 
+  const activeSounds = new Set();
+
   function dragStart(e) {
     const draggedBox = e.target;
     e.dataTransfer.setData('text/plain', draggedBox.dataset.audio);
-  }
-
-  function dragEnd(e) {
-    const draggedBox = e.target;
-    draggedBox.classList.remove('dragging');
   }
 
   function dragOver(e) {
@@ -28,17 +24,24 @@ document.addEventListener("DOMContentLoaded", function () {
   function drop(e) {
     e.preventDefault();
     const audioSrc = e.dataTransfer.getData('text/plain');
+
+    // Play the sound when dropped
     playAudio(audioSrc);
-    const draggedBox = document.querySelector('.rounded_box.dragging');
-    draggedBox.classList.add('dropped');
-    dropZone.classList.remove('hover');
+    activeSounds.add(audioSrc);
+
+    // Remove the dragging class after a delay
     setTimeout(() => {
-      draggedBox.classList.remove('dropped');
-    }, 1000); // Adjust the duration based on the animation duration
+      document.querySelector(`.rounded_box[data-audio="${audioSrc}"]`).classList.remove('dragging');
+    }, 100);
   }
 
   function playAudio(audioSrc) {
     const audioElement = new Audio(audioSrc);
     audioElement.play();
+
+    // Remove the sound from activeSounds when it finishes playing
+    audioElement.addEventListener('ended', () => {
+      activeSounds.delete(audioSrc);
+    });
   }
 });

@@ -30,6 +30,24 @@ body {
 }
 
 .rounded_box:hover {
+ background-color: rgb(235, 58, 9);
+}
+
+.drop_zone {
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+  background-color: rgba(255, 64, 0, 0.5); 
+  border-radius: 50%;
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drop_zone:hover {
   animation: scaleAnimation 1s infinite alternate;
 }
 
@@ -47,33 +65,13 @@ body {
   }
 }
 
-.drop_zone {
-  width: 300px;
-  height: 300px;
-  margin: 50px auto;
-  background-color: rgba(255, 64, 0, 0.5); /* Red semi-transparent */
-  border-radius: 50%;
-  font-weight: 800;
-  color: rgb(255, 255, 255);
-  font-size: xx-large;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.5);
-  }
-}
-
 .rounded_box.dropped {
-  animation: fadeOut 1s forwards; /* Apply the fade-out animation */
+  opacity: 0;
+  visibility: hidden;
 }
+
+
+
+
 
 
