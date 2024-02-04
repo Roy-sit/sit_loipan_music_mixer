@@ -3,11 +3,15 @@ body {
   overflow: hidden;
 }
 
-h1 {
+#title {
   position: absolute;
- margin: 30px;
-  color: rgb(237, 12, 12);
+  margin: 20px;
+  color: #f2e208d7;
   z-index: 1;
+}
+
+#title h3 {
+  color: #f2e208d7;
 }
 
 #bg_image {
@@ -16,11 +20,12 @@ h1 {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  filter: blur(2px);
 }
 
 #logo {
   position: absolute;
-  top: 105px;
+  top: 30px;
   right: 20px;
   width: 250px;
 }
@@ -32,7 +37,7 @@ h1 {
 .rounded_box {
   width: 120px;
   height: 120px;
-  margin: 100px 60px 60px 20px;
+  margin: 170px 60px 60px 20px;
   background-color: #f2e208d7;
   border-radius: 10px;
   font-weight: 800;
