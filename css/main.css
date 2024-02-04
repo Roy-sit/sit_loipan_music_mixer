@@ -76,6 +76,8 @@ body {
 
 .drop_zone img {
   animation: rotate 10s linear infinite;
+  box-shadow: 0 0 30px rgb(235, 58, 9);
+  border-radius: 120px;
 }
 
 @keyframes rotate {
