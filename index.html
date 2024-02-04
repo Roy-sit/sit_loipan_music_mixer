@@ -7,18 +7,21 @@
     <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
+    <h1>BEATBOX MUSIC MIXER</h1>
     <img id="bg_image" src="images/beatbox_background.jpg" alt="Beatbox Background">
     
     <div class="top_boxes">
-        <div class="rounded_box" draggable="true">Sound 1</div>
-        <div class="rounded_box" draggable="true">Sound 2</div>
-        <div class="rounded_box" draggable="true">Sound 3</div>
-        <div class="rounded_box" draggable="true">Sound 4</div>
-        <div class="rounded_box" draggable="true">Sound 5</div>
+        <div class="rounded_box" draggable="true" data-audio="audio/sound_1.mp3">Sound 1</div>
+        <div class="rounded_box" draggable="true" data-audio="audio/sound_2.mp3">Sound 2</div>
+        <div class="rounded_box" draggable="true" data-audio="audio/sound_3.mp3">Sound 3</div>
+        <div class="rounded_box" draggable="true" data-audio="audio/sound_4.mp3">Sound 4</div>
+        <div class="rounded_box" draggable="true" data-audio="audio/sound_5.mp3">Sound 5</div>
     </div>
 
-    <audio id="audio1" src="audio/captain_joz.m4a" title="Captain Joz" controls></audio>
-    <audio id="audio2" src="audio/j_stone.m4a" title="J. Stone" controls></audio>
+    <div id="drop_zone" class="drop_zone">Drop Zone</div>
+
+    <!-- <audio id="audio1" src="audio/captain_joz.m4a" title="Captain Joz" controls></audio> -->
+    
         
     <script src="js/main.js"></script>
 </body>

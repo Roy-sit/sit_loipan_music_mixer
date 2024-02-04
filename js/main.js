@@ -1,37 +1,44 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const boxes = document.querySelectorAll('.top_boxes');
+  const boxes = document.querySelectorAll('.rounded_box');
+  const dropZone = document.getElementById('drop_zone');
 
   boxes.forEach(box => {
-    box.addEventListener('mousedown', dragStart);
-    box.addEventListener('mouseup', dragEnd);
+    box.addEventListener('dragstart', dragStart);
+    box.addEventListener('dragend', dragEnd);
   });
 
+  dropZone.addEventListener('dragover', dragOver);
+  dropZone.addEventListener('drop', drop);
+
   function dragStart(e) {
-    e.preventDefault();
     const draggedBox = e.target;
-    draggedBox.classList.add('dragging');
-    draggedBox.classList.add('rotating');
+    e.dataTransfer.setData('text/plain', draggedBox.dataset.audio);
+  }
 
-    let offsetX = e.clientX - draggedBox.getBoundingClientRect().left;
-    let offsetY = e.clientY - draggedBox.getBoundingClientRect().top;
+  function dragEnd(e) {
+    const draggedBox = e.target;
+    draggedBox.classList.remove('dragging');
+  }
 
-    function moveBox(e) {
-      draggedBox.style.position = 'absolute';
-      draggedBox.style.zIndex = '1000';
-      draggedBox.style.left = e.clientX - offsetX + 'px';
-      draggedBox.style.top = e.clientY - offsetY + 'px';
-    }
+  function dragOver(e) {
+    e.preventDefault();
+    dropZone.classList.add('hover');
+  }
 
-    function dragEnd() {
-      draggedBox.classList.remove('dragging');
-      draggedBox.classList.remove('rotating');
-      draggedBox.style.position = 'static';
-      draggedBox.style.zIndex = 'auto';
-      document.removeEventListener('mousemove', moveBox);
-      document.removeEventListener('mouseup', dragEnd);
-    }
+  function drop(e) {
+    e.preventDefault();
+    const audioSrc = e.dataTransfer.getData('text/plain');
+    playAudio(audioSrc);
+    const draggedBox = document.querySelector('.rounded_box.dragging');
+    draggedBox.classList.add('dropped');
+    dropZone.classList.remove('hover');
+    setTimeout(() => {
+      draggedBox.classList.remove('dropped');
+    }, 1000); // Adjust the duration based on the animation duration
+  }
 
-    document.addEventListener('mousemove', moveBox);
-    document.addEventListener('mouseup', dragEnd);
+  function playAudio(audioSrc) {
+    const audioElement = new Audio(audioSrc);
+    audioElement.play();
   }
 });
