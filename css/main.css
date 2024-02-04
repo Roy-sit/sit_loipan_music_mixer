@@ -1,5 +1,11 @@
 body {
   margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  color: white;
+  background-color: rgb(235, 58, 9) ;
 }
 
 #bg_image {
@@ -17,7 +23,7 @@ body {
 .rounded_box {
   width: 120px;
   height: 120px;
-  margin: 100px 50px 50px 20px;
+  margin: 80px 50px 50px 20px;
   background-color: #f2e208;
   border-radius: 10px;
   font-weight: 800;
@@ -65,10 +71,7 @@ body {
   }
 }
 
-.rounded_box.dropped {
-  opacity: 0;
-  visibility: hidden;
-}
+
 
 
 
