@@ -68,38 +68,26 @@ body {
 }
 
 
-
-.drop_zone {
-  width: 300px;
-  height: 300px;
-  margin: 50px auto;
-  background-color: rgba(255, 64, 0, 0.5); 
-  border-radius: 50%;
-  font-weight: 800;
-  color: rgb(255, 255, 255);
-  font-size: xx-large;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.drop_zone img {
+  width: 250px;
+  height: 250px;
+  margin: 20px 50px;
 }
 
-.drop_zone:hover {
-  animation: scaleAnimation 1s infinite alternate;
+.drop_zone img {
+  animation: rotate 10s linear infinite;
 }
 
-@keyframes scaleAnimation {
+@keyframes rotate {
   0% {
-    transform: scale(1);
+      transform: rotate(0deg);
   }
-  
-  50% {
-    transform: scale(1.2);
-  }
-
   100% {
-    transform: scale(1);
+      transform: rotate(360deg);
   }
 }
+
+
 
 
 
