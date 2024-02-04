@@ -12,10 +12,6 @@ body {
 
 .top_boxes {
   display: flex;
-  text-align: center;
-  color: rgb(20, 121, 244);
-  font-size: x-large;
-  
 }
 
 .rounded_box {
@@ -24,7 +20,13 @@ body {
   margin: 100px 50px 50px 20px;
   background-color: #f2e208;
   border-radius: 10px;
-  transition: transform 0.3s ease; /* Add smooth transition */
+  font-weight: 800;
+  color: rgb(20, 121, 244);
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
 }
 
 .rounded_box.rotating {
@@ -37,5 +39,23 @@ body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.rounded_box:hover {
+  animation: scaleAnimation 1s infinite alternate;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
