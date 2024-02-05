@@ -1,16 +1,16 @@
-####Course:
+#### Course:
 Multi-media Authoring 2 (Section 2)
 
-####Project:
+#### Project:
 Music Mixer Checkpoint
 
-####Title:
+#### Title:
 Beatbox Music Mixer
 
-####Research:
+#### Research:
 Background image, logo ideas, audio covers, audio sounds, image effects, function graphic ideas, ligthing, colour theme.
 
-####Technique / Resources:
+#### Technique / Resources:
 - Illustration for SVG logo and visual effects
 - Online tutoring self-learning
 - Photoshop for image editing & sizing
