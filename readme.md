@@ -19,4 +19,4 @@ Background image, logo ideas, audio covers, audio sounds, image effects, functio
 - Pinterest / Google / Pexels for image ideas
 - HTML
 - CSS for styling and animation (keyframes, hover)
-- JS for enchanced animation (drag & drop, audio play)
+- JS for enchanced animation (drag & drop, play audio)
