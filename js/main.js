@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
   dropZone.addEventListener('dragover', dragOver);
   dropZone.addEventListener('drop', drop);
 
-  const activeSounds = new Set();
-
   function dragStart(e) {
     const draggedBox = e.target;
     e.dataTransfer.setData('text/plain', draggedBox.dataset.audio);
@@ -25,23 +23,17 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault();
     const audioSrc = e.dataTransfer.getData('text/plain');
 
-    // Play the sound when dropped
+   
     playAudio(audioSrc);
-    activeSounds.add(audioSrc);
 
-    // Remove the dragging class after a delay
+    // Remove the hover class after a delay
     setTimeout(() => {
-      document.querySelector(`.rounded_box[data-audio="${audioSrc}"]`).classList.remove('dragging');
+      dropZone.classList.remove('hover');
     }, 100);
   }
 
   function playAudio(audioSrc) {
     const audioElement = new Audio(audioSrc);
     audioElement.play();
-
-    // Remove the sound from activeSounds when it finishes playing
-    audioElement.addEventListener('ended', () => {
-      activeSounds.delete(audioSrc);
-    });
   }
 });

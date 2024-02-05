@@ -35,46 +35,39 @@ body {
 }
 
 .rounded_box {
-  width: 120px;
-  height: 120px;
-  margin: 170px 60px 60px 20px;
+  width: 150px;
+  height: 150px;
+  margin: 150px 50px 60px 20px;
   background-color: #f2e208d7;
-  border-radius: 10px;
-  font-weight: 800;
-  color: rgb(20, 121, 244);
-  font-size: x-large;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  cursor: grab;
 }
 
 .rounded_box:hover {
- background-color: rgb(235, 58, 9);
- animation: scaleAnimation 1s infinite alternate;
-}
-
-@keyframes scaleAnimation {
-  0% {
-    transform: scale(1);
-  }
-  
-  50% {
-    transform: scale(1.2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-
-.drop_zone img {
-  width: 250px;
-  height: 250px;
-  margin: 20px 50px;
-}
+  background-color: rgb(235, 58, 9);
+  animation: scaleAnimation 1s infinite alternate;
+ }
+ 
+ @keyframes scaleAnimation {
+   0% {
+     transform: scale(1);
+   }
+   
+   50% {
+     transform: scale(1.2);
+   }
+ 
+   100% {
+     transform: scale(1);
+   }
+ }
 
 .drop_zone img {
+  width: 230px;
+  height: 230px;
+  margin: 20px 80px;
   animation: rotate 10s linear infinite;
   box-shadow: 0 0 30px rgb(235, 58, 9);
   border-radius: 120px;
@@ -82,19 +75,9 @@ body {
 
 @keyframes rotate {
   0% {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
-
-
-
-
-
-
-
-
-
-
