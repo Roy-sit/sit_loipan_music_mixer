@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Beatbox Music Mixer</title>
     <link href="css/main.css" rel="stylesheet">
 </head>
@@ -16,21 +17,40 @@
     <img id="bg_image" src="images/beatbox_background.jpg" alt="Beatbox Background">
     
     <div class="top_boxes">
-        <div class="rounded_box" draggable="true" data-audio="audio/sound_1.mp3"><img src="images/beat_sound2.png" alt="Sound 1 Image"></div>
-        <div class="rounded_box" draggable="true" data-audio="audio/sound_2.mp3"></div>
-        <div class="rounded_box" draggable="true" data-audio="audio/sound_3.mp3"></div>
-        <div class="rounded_box" draggable="true" data-audio="audio/sound_4.mp3"></div>
+        <div class="rounded_box" draggable="true" data-audio="audio/sound_1.mp3">
+            <img class="soundtrack_cover" src="images/beat_sound2.png" alt="Sound 1 Image">
+            <h2>Track 01</h2>
+        </div>
+           
+        <div class="rounded_box" draggable="true" data-audio="audio/sound_2.mp3">
+            <img class="soundtrack_cover" src="images/beat_sound1.png" alt="Sound 2 Image">
+            <h2>Track 02</h2>
+        </div>
+
+        <div class="rounded_box" draggable="true" data-audio="audio/sound_3.mp3">
+            <img class="soundtrack_cover" src="images/beat_sound3.png" alt="Sound 3 Image">
+            <h2>Track 03</h2>
+        </div>
+
+        <div class="rounded_box" draggable="true" data-audio="audio/sound_4.mp3">
+            <img class="soundtrack_cover" src="images/beat_sound4.png" alt="Sound 4 Image">
+            <h2>Track 04</h2>
+        </div>
     </div>
+
+    <div id="controls">
+        <button id="pause_btn"><i class="fas fa-pause"></i></button>
+        <button id="resume_btn"><i class="fas fa-play"></i></button>
+        <button id="stop_btn"><i class="fas fa-stop"></i></button>
+      </div>
 
     <div id="drop_zone" class="drop_zone">
         <img src="images/cd2.png" alt="CD Image">
         <img src="images/cd2.png" alt="CD Image 2">
     </div>
 
+  
 
-
-    
-    
         
     <script src="js/main.js"></script>
 </body>

@@ -2,7 +2,7 @@
 Multi-media Authoring 2 (Section 2)
 
 #### Project:
-Music Mixer Checkpoint
+Music Mixer
 
 #### Title:
 Beatbox Music Mixer
@@ -20,3 +20,9 @@ Background image, logo ideas, audio covers, audio sounds, image effects, functio
 - HTML
 - CSS for styling and animation (keyframes, hover)
 - JS for enchanced animation (drag & drop, play audio)
+
+#### Updated For Final Music Mixer
+- Added soundtrack covers
+- Added track's name
+- Added audio control
+- Revised over-all layout / colors / Structure / Smoothness
